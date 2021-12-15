@@ -57,7 +57,7 @@
     {{-- Seccion para insertar js--}}
     @section('include_js')
     
-      {{-- <script src="{{ asset('/js/controlLike.js') }}"></script> --}}
+   
      
     @stop
     
