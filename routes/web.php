@@ -13,24 +13,29 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-
-//ruta login
+//ruta para iniciar session
     Route::get('/', function () {
         return view('auth.login'); 
-    });
-   
+    })->middleware('validarUser');
 
-//ruta del home page 
-    Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
-   
-//GESTION CATALOGO
-    Route::prefix('gestion')->group(function () {
-        Route::resource('/mail', 'MailsController')->middleware('auth');
+//rutas permitida inicio de seccion
+    Route::group(['middleware'=>'auth'],function (){
+       
+        //ruta del home page 
+        Route::get('/home', 'HomeController@index')->name('home')->middleware('validarUser');
+
+       
+        Route::prefix('gestion')->group(function () {
+            Route::resource('/mail', 'MailsController');
+        });
+
+
     });
+
 
 
 // rutas auth
-Auth::routes();
+    Auth::routes();
 
 
 

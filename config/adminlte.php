@@ -121,7 +121,7 @@ return [
     */
 
     'classes_body' => ' ',
-    'classes_brand' => 'navbar-brand   text-ligth',
+    'classes_brand' => '  text-ligth',
     'classes_brand_text' => 'brand-text',
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
@@ -144,7 +144,7 @@ return [
     |
     */
 
-    'sidebar_mini' => true,
+    'sidebar_mini' => false,
     'sidebar_collapse' => false,
     'sidebar_collapse_auto_size' => false,
     'sidebar_collapse_remember' => false,
@@ -225,27 +225,6 @@ return [
    
    'menu' => [
          
-         ['header' => 'Administrador'],
-        [
-            'text' => 'Gestion usuario',
-            'url'  => '/home',
-            'icon' => 'fas fa-fw fa-users',
-            'active' => ['gestion*']
-            
-        ],
-       
-        
-         
-       
-        ['header' => 'User'],
-        [
-            'text' => 'Emails ',
-            'url'  => 'gestion/mail',
-            
-            'icon' => 'fas fa-fw fa-envelope ',
-            
-        ],
-
        
     ],
 
