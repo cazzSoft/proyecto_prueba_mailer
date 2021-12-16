@@ -52,6 +52,23 @@ class EventServiceProvider extends ServiceProvider
                             ],
                         ],
                     ],
+                    ['header' => 'Gestión log'],
+                    [
+                        'text' => 'logs-Dashboard',
+                        'url'  => 'log-viewer',
+                        'icon' => 'fa fa-tachometer-alt',
+                        'label'       => 'Dashboard',
+                        'label_color' => 'danger',
+                        'target' => '_blank' 
+                    ],
+                    [
+                        'text' => 'logs',
+                        'url'  => 'log-viewer/logs',
+                        'icon' => 'fas fa-fw fa-book',
+                        'label'       => 'log-viewer',
+                        'label_color' => 'info',
+                        'target' => '_blank' 
+                    ],
                     
                 );
             }

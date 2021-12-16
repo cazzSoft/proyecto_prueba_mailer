@@ -1,11 +1,11 @@
 
 	// configuraciones globales
     $(function () {
-
+          
         // activar stylo select2
         // $('.select2').select2();
         // stilos de table
-        // cargar_stilos_table('.data_table');
+        cargar_stilos_table('.data_table');
         //  para aplicar el dataRange de fechas  
         // $('.daterange').daterangepicker();
     });

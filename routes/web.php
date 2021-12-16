@@ -18,15 +18,17 @@ use Illuminate\Support\Facades\Auth;
         return view('auth.login'); 
     })->middleware('validarUser');
 
+
 //rutas permitida inicio de seccion
     Route::group(['middleware'=>'auth'],function (){
        
         //ruta del home page 
         Route::get('/home', 'HomeController@index')->name('home')->middleware('validarUser');
 
-       
+       //ruta para gestion mail y usuarios
         Route::prefix('gestion')->group(function () {
             Route::resource('/mail', 'MailsController');
+            Route::resource('/usuario', 'UsuarioController')->middleware('validarUser');
         });
 
 

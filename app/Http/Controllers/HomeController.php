@@ -26,7 +26,8 @@ class HomeController extends Controller
     public function index()
     {
        
-        return view('home');
+        $listaUser=User::with('ciudad')->get();
+        return view('home',['lista_user'=>$listaUser]);
     }
 
     public function update(Request $request ,$id)

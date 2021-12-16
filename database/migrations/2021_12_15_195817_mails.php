@@ -17,8 +17,8 @@ class Mails extends Migration
             $table->id('idmails');
             $table->string('asunto');
             $table->string('destino');
-            $table->string('cuerpo');
-
+            $table->string('cuerpo','1200');
+            $table->tinyInteger('estado');
             $table->unsignedBigInteger('iduser');
             $table->foreign('iduser')->references('id')->on('users');
 

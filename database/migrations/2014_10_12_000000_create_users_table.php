@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->integer('idciudad');
+            $table->integer('idciudad')->nullable();
             $table->string('num_celular','10');
             $table->string('dni','11');
             $table->date('fecha_na');
@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->string('tipo_user','2');
             $table->timestamps();
         });
     }
