@@ -28,6 +28,7 @@ use Illuminate\Support\Facades\Auth;
        //ruta para gestion mail y usuarios
         Route::prefix('gestion')->group(function () {
             Route::resource('/mail', 'MailsController');
+            Route::get('/mails', 'MailsController@email');
             Route::resource('/usuario', 'UsuarioController')->middleware('validarUser');
         });
 

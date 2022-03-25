@@ -75,4 +75,9 @@ class RegisterController extends Controller
 
         
     }
+
+    public function showRegistrationForm()
+    {
+        return 1;
+    }
 }

@@ -88,12 +88,20 @@ class MailsController extends Controller
             
     }
 
-    /** givmlafxlzsmedyz
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   public function email()
+   {
+       
+        $request=MailsModel::with('usuario')->where('idmails',1)->first();
+        $de='info@option2health.com';
+        Mail::send('mail.sendEmail', ['data'=>$request,'name_user'=>auth()->user()->name], function ($m) use ($de,$request) {
+           $m->to('cazzdj17@hotmail.com')
+           ->from($de, 'info@option2health.com ('.$request->asunto.')')
+           ->subject($request->asunto);
+        });
+
+        return 1;
+   }
+
     public function show($id)
     {
         //
